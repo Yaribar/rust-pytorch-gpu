@@ -24,10 +24,8 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"GitHub.copilot-labs",
-				"GitHub.copilot-nightly",
+				"GitHub.copilot",
 				"ms-azuretools.vscode-docker",
-				"technosophos.vscode-make",
 				"ms-vscode.makefile-tools"
 			]
 		}
