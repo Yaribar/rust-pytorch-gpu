@@ -6,20 +6,20 @@ on:
     branches: [ "main" ]
 env:
   CARGO_TERM_COLOR: always
+  LIBTORCH_USE_PYTORCH: 1
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions-rs/toolchain@v1
+    - uses: actions/checkout@v4
+    - uses: dtolnay/rust-toolchain@stable
       with:
-          toolchain: stable
-          profile: minimal
           components: clippy, rustfmt
-          override: true
-    - name: update linux
-      run: sudo apt update 
-    - name: update Rust
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - name: Install Python dependencies
       run: make install
     - name: Check Rust versions
       run: make rust-version
@@ -29,4 +29,3 @@ jobs:
       run: make lint
     - name: Test
       run: make test
-    
