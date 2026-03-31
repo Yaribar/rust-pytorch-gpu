@@ -8,4 +8,4 @@ edition = "2021"
 [dependencies]
 anyhow = "1.0.40"
 #pytorch rust
-tch = "~0.10.1"
+tch = "~0.17.0"
