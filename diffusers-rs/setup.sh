@@ -15,9 +15,8 @@ fi
 
 # ── 2. Patch tch / torch-sys versions (0.13 → 0.17) ──────────────────
 echo "Patching diffusers-src/Cargo.toml to use tch 0.17..."
-if grep -q 'tch = "0.13"' "${SRC_DIR}/Cargo.toml"; then
-    sed -i.bak 's/tch = "0.13"/tch = "0.17"/' "${SRC_DIR}/Cargo.toml"
-    sed -i.bak 's/torch-sys = "0.13"/torch-sys = "0.17"/' "${SRC_DIR}/Cargo.toml"
+if grep -q '"0.13"' "${SRC_DIR}/Cargo.toml"; then
+    sed -i.bak 's/"0\.13"/"0.17"/g' "${SRC_DIR}/Cargo.toml"
     rm -f "${SRC_DIR}/Cargo.toml.bak"
     echo "Patched successfully."
 else
