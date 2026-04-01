@@ -1,0 +1,10 @@
+[package]
+name = "diffusers-rs"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+diffusers = { path = "diffusers-src" }
+tch = "0.17.0"
+clap = { version = "4.6", features = ["derive"] }
+anyhow = "1.0.98"
