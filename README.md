@@ -112,6 +112,11 @@ cargo run -- generate --prompt "A very rusty robot holding a fire torch to noteb
 ```
 
 Options: `--output <file>` (default: sd_output.png), `--steps <n>` (default: 20), `--data-dir <path>` (default: data)
+
+**Codespace disk space note:** A default 32GB Codespace only has ~6GB free after system overhead (~21GB is used by VS Code Server, CUDA toolkit, Python venv, and Codespace tooling). The SD v2.1 model weights are ~5GB and libtorch adds ~2-3GB during build, so running the full pipeline will not fit. Options:
+- Upgrade to a 64GB Codespace
+- Run `cargo build` only (compiles without downloading weights)
+- Run locally on a machine with more disk space (e.g. Apple Silicon Mac with Candle for Metal GPU support)
 ![Screenshot 2023-01-16 at 5 57 59 PM](https://user-images.githubusercontent.com/58792/212777548-0d9619e8-ad1b-4cc9-8871-505b0b5b2345.png)
 
 Stable Diffusion 2.1 Pegging GPU
